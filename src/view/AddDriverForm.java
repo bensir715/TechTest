@@ -2,6 +2,7 @@ package view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class AddDriverForm extends JPanel {
     JButton addButton;
@@ -23,7 +24,7 @@ public class AddDriverForm extends JPanel {
     JTextField baseFareDistanceField;
 
 
-    public AddDriverForm(){
+    public AddDriverForm() {
         // add label test
         this.nameLabel = new JLabel("Name: ");
         this.surnameLabel = new JLabel("Surname: ");
@@ -89,7 +90,7 @@ public class AddDriverForm extends JPanel {
         constraints.gridx = 5;
         constraints.gridy = 1;
         add(baseFareDistanceField, constraints);
-        Insets buttonInsets = new Insets(5,0,0,0);
+        Insets buttonInsets = new Insets(5, 0, 0, 0);
         constraints.gridx = 2;
         constraints.gridy = 2;
         constraints.insets = buttonInsets;
@@ -103,5 +104,40 @@ public class AddDriverForm extends JPanel {
         add(fareViewButton, constraints);
     }
 
+    // getter
+    public String getName(){
+        return this.nameField.getText();
+    }
 
+    public String getSurname(){
+        return this.surnameField.getText();
+    }
+
+    public String getEmail(){
+        return this.emailField.getText();
+    }
+
+    public String getVehicleType(){
+        return this.vehicleTypeField.getText();
+    }
+
+    public Integer getBaseFarePrice(){
+        return Integer.valueOf(this.baseFarePriceField.getText());
+    }
+
+    public Integer getBaseFareDistance(){
+        return Integer.valueOf(this.baseFareDistanceField.getText());
+    }
+
+    public JButton getAddButton() {
+        return addButton;
+    }
+
+    public JButton getDriverViewButton() {
+        return driverViewButton;
+    }
+
+    public JButton getFareViewButton() {
+        return fareViewButton;
+    }
 }

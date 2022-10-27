@@ -12,6 +12,15 @@ public class Driver {
 
     }
 
+    public Driver(String name, String surname, String email, String vehicleType, Integer baseFarePrice, Integer baseFareDistance) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.vehicleType = vehicleType;
+        this.baseFarePrice = baseFarePrice;
+        this.baseFareDistance = baseFareDistance;
+    }
+
     public String getName() {
         return name;
     }

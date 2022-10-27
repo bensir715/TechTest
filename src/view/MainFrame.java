@@ -1,5 +1,7 @@
 package view;
 
+import controller.GeneralController;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -7,12 +9,27 @@ public class MainFrame extends JFrame {
     public static final int MAIN_WIDTH = 1200;
     public static final int MAIN_HEIGHT = 800;
 
+    CardLayout cardLayout;
+
     public MainFrame() {
-        setLayout(new CardLayout());
-        add(new AddDriverForm(), "add form");
+        this.cardLayout = new CardLayout();
+        AddDriverForm addDriverForm = new AddDriverForm();
+        DriverRecord driverRecord = new DriverRecord();
+        setLayout(cardLayout);
+
+        GeneralController controller = new GeneralController(this, addDriverForm, driverRecord);
+
+        add(addDriverForm, "add form");
+        add(driverRecord, "driver record");
+
+//        addDriverForm.getAddButton().addActionListener(event -> cardLayout.show(MainFrame.this.getContentPane(), "add form"));
 
         setSize(MAIN_WIDTH, MAIN_HEIGHT);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
+    }
+
+    public CardLayout getCardLayout() {
+        return cardLayout;
     }
 }
