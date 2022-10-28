@@ -1,27 +1,31 @@
 package view;
 
 import javax.swing.*;
+import javax.swing.text.DefaultFormatterFactory;
+import javax.swing.text.NumberFormatter;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 public class AddDriverForm extends JPanel {
-    JButton addButton;
-    JButton driverViewButton;
-    JButton fareViewButton;
+    private JButton addButton;
+    private JButton driverViewButton;
+    private JButton fareViewButton;
 
-    JLabel nameLabel;
-    JLabel surnameLabel;
-    JLabel emailLabel;
-    JLabel vehicleTypeLabel;
-    JLabel baseFarePriceLabel;
-    JLabel baseFareDistanceLabel;
+    private JLabel nameLabel;
+    private JLabel surnameLabel;
+    private JLabel emailLabel;
+    private JLabel vehicleTypeLabel;
+    private JLabel baseFarePriceLabel;
+    private JLabel baseFareDistanceLabel;
 
-    JTextField nameField;
-    JTextField surnameField;
-    JTextField emailField;
-    JTextField vehicleTypeField;
-    JTextField baseFarePriceField;
-    JTextField baseFareDistanceField;
+    private JTextField nameField;
+    private JTextField surnameField;
+    private JTextField emailField;
+    private JTextField vehicleTypeField;
+    private JFormattedTextField baseFarePriceField;
+    private JFormattedTextField baseFareDistanceField;
 
 
     public AddDriverForm() {
@@ -38,12 +42,19 @@ public class AddDriverForm extends JPanel {
         this.surnameField = new JTextField(15);
         this.emailField = new JTextField(15);
         this.vehicleTypeField = new JTextField(15);
-        this.baseFarePriceField = new JTextField(15);
-        this.baseFareDistanceField = new JTextField(15);
+        // add formatter to allow only numbers
+        DecimalFormat df = new DecimalFormat();
+        NumberFormatter numberFormatter = new NumberFormatter(df);
+        numberFormatter.setMinimum(0);
+        DefaultFormatterFactory factory = new DefaultFormatterFactory(numberFormatter);
+        this.baseFarePriceField = new JFormattedTextField(factory, 0);
+        this.baseFareDistanceField = new JFormattedTextField(factory, 0);
+        this.baseFarePriceField.setColumns(15);
+        this.baseFareDistanceField.setColumns(15);
 
         // add button text
         Dimension buttonSize = new Dimension(150, 20);
-        this.addButton = new JButton("Add");
+        this.addButton = new JButton("Register");
         this.addButton.setPreferredSize(buttonSize);
         this.driverViewButton = new JButton("View Driver Profiles");
         this.driverViewButton.setPreferredSize(buttonSize);
@@ -139,5 +150,30 @@ public class AddDriverForm extends JPanel {
 
     public JButton getFareViewButton() {
         return fareViewButton;
+    }
+
+    // setter
+    public void setNameField(String nameField) {
+        this.nameField.setText(nameField);
+    }
+
+    public void setSurnameField(String surnameField) {
+        this.surnameField.setText(surnameField);
+    }
+
+    public void setEmailField(String emailField) {
+        this.emailField.setText(emailField);
+    }
+
+    public void setVehicleTypeField(String vehicleTypeField) {
+        this.vehicleTypeField.setText(vehicleTypeField);
+    }
+
+    public void setBaseFarePriceField(Integer baseFarePriceField) {
+        this.baseFarePriceField.setValue(baseFarePriceField);
+    }
+
+    public void setBaseFareDistanceField(Integer baseFareDistanceField) {
+        this.baseFareDistanceField.setValue(baseFareDistanceField);
     }
 }

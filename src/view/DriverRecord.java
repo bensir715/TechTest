@@ -30,12 +30,8 @@ public class DriverRecord extends JPanel {
        add(deleteDriverButton);
     }
 
-    public void loadDriver(List<Driver> driverList){
-        DriverTableModel model = new DriverTableModel(new ArrayList<Driver>());
-        for(Driver driver : driverList){
-            model.addRow(driver);
-        }
-        this.driverTable.setModel(model);
+    public JTable getDriverTable() {
+        return driverTable;
     }
 
     public JButton getViewAddDriverButton() {
