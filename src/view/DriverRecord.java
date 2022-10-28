@@ -4,6 +4,7 @@ import model.Driver;
 import model.DriverTableModel;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,8 @@ public class DriverRecord extends JPanel {
 
     private JButton viewAddDriverButton;
     private JButton deleteDriverButton;
+    private JButton calFareButton;
+    private JButton viewFareRecordButton;
 
     public DriverRecord() {
        setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
@@ -23,11 +26,29 @@ public class DriverRecord extends JPanel {
        JScrollPane scrollDriverRecord = new JScrollPane(driverTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
        add(scrollDriverRecord);
 
+       Dimension buttonSize = new Dimension(500, 20);
        this.viewAddDriverButton = new JButton("Add Driver");
+       this.viewAddDriverButton.setMaximumSize(buttonSize);
        this.deleteDriverButton = new JButton("Delete Driver");
+       this.deleteDriverButton.setMaximumSize(buttonSize);
+       this.calFareButton = new JButton("Calculate Fare");
+       this.calFareButton.setMaximumSize(buttonSize);
+       this.viewFareRecordButton = new JButton("Fare History");
+       this.viewFareRecordButton.setMaximumSize(buttonSize);
 
-       add(viewAddDriverButton);
-       add(deleteDriverButton);
+       JPanel buttonPanel = new JPanel();
+
+       buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.PAGE_AXIS));
+       buttonPanel.add(viewAddDriverButton);
+       buttonPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+       buttonPanel.add(deleteDriverButton);
+       buttonPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+       buttonPanel.add(calFareButton);
+       buttonPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+       buttonPanel.add(viewFareRecordButton);
+       buttonPanel.add(Box.createRigidArea(new Dimension(0, 30)));
+
+       add(buttonPanel);
     }
 
     public JTable getDriverTable() {
