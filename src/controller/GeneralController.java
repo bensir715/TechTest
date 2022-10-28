@@ -21,6 +21,7 @@ public class GeneralController {
         this.driverRecord = driverRecord;
 
         addDriverForm.getAddButton().addActionListener(actionEvent -> {
+            // retrieve info from addDriverForm
             String name = addDriverForm.getName();
             String surname = addDriverForm.getSurname();
             String email = addDriverForm.getEmail();
@@ -28,14 +29,32 @@ public class GeneralController {
             Integer baseFarePrice = addDriverForm.getBaseFarePrice();
             Integer baseFareDistance = addDriverForm.getBaseFareDistance();
 
+            // create new Driver object
             Driver driver = new Driver(name, surname, email, vehicleType, baseFarePrice, baseFareDistance);
 
+            // add Driver to dummy DB
             dataBase.getDriverList().add(driver);
 
+            // load driverList from dummy DB to driverRecord
             driverRecord.loadDriver(dataBase.getDriverList());
-            mainFrame.add(driverRecord, "driver record");
 
+            // Renew driverRecord component to mainFrame
+            mainFrame.add(driverRecord, "driver record");
+            // show new driverRecord component
             mainFrame.getCardLayout().show(mainFrame.getContentPane(), "driver record");
+        });
+
+        addDriverForm.getDriverViewButton().addActionListener(actionEvent ->{
+            // load driverList from dummy DB to driverRecord
+            driverRecord.loadDriver(dataBase.getDriverList());
+            // Renew driverRecord component to mainFrame
+            mainFrame.add(driverRecord, "driver record");
+            // show new driverRecord component
+            mainFrame.getCardLayout().show(mainFrame.getContentPane(), "driver record");
+        });
+
+        driverRecord.getViewAddDriverButton().addActionListener(actionEvent -> {
+            mainFrame.getCardLayout().show(mainFrame.getContentPane(), "add form");
         });
     }
 }

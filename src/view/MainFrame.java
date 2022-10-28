@@ -22,8 +22,6 @@ public class MainFrame extends JFrame {
         add(addDriverForm, "add form");
         add(driverRecord, "driver record");
 
-//        addDriverForm.getAddButton().addActionListener(event -> cardLayout.show(MainFrame.this.getContentPane(), "add form"));
-
         setSize(MAIN_WIDTH, MAIN_HEIGHT);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
