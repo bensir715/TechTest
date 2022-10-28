@@ -9,7 +9,7 @@ public class MainFrame extends JFrame {
     public static final int MAIN_WIDTH = 1200;
     public static final int MAIN_HEIGHT = 800;
 
-    CardLayout cardLayout;
+    private CardLayout cardLayout;
 
     public MainFrame() {
         this.cardLayout = new CardLayout();

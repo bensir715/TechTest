@@ -1,5 +1,8 @@
 package model;
 
+import util.Util;
+
+import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import java.util.List;
 
@@ -67,20 +70,32 @@ public class DriverTableModel extends AbstractTableModel {
                 editDriver.setSurname((String) value);
                 break;
             case 2:
+                if(!Util.validateEmail((String)value)){
+                    JOptionPane.showMessageDialog(null,"Invalid email.");
+                    break;
+                }
                 editDriver.setEmail((String) value);
                 break;
             case 3:
                 editDriver.setVehicleType((String) value);
                 break;
             case 4:
-                editDriver.setBaseFarePrice((Integer) value);
+                if(value != null){
+                    editDriver.setBaseFarePrice((Integer) value);
+                }
                 break;
             case 5:
-                editDriver.setBaseFareDistance((Integer) value);
+                if(value != null){
+                    editDriver.setBaseFareDistance((Integer) value);
+                }
                 break;
             default:
                 return;
         }
+    }
+
+    public void removeRow(int rowIndex){
+        driverList.remove(rowIndex);
     }
 
     public void addRow(Driver driver){

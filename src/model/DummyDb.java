@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DummyDb {
-    List<Driver> driverList;
+    private List<Driver> driverList;
 
     public DummyDb() {
         this.driverList = new ArrayList<Driver>();
