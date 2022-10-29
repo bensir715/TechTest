@@ -1,6 +1,7 @@
 package view;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.NumberFormatter;
 import java.awt.*;
@@ -11,7 +12,6 @@ import java.text.NumberFormat;
 public class AddDriverForm extends JPanel {
     private JButton addButton;
     private JButton driverViewButton;
-    private JButton fareViewButton;
 
     private JLabel nameLabel;
     private JLabel surnameLabel;
@@ -29,6 +29,8 @@ public class AddDriverForm extends JPanel {
 
 
     public AddDriverForm() {
+        TitledBorder border = BorderFactory.createTitledBorder("Driver Profile Registration");
+        this.setBorder(border);
         // add label test
         this.nameLabel = new JLabel("Name: ");
         this.surnameLabel = new JLabel("Surname: ");
@@ -44,6 +46,7 @@ public class AddDriverForm extends JPanel {
         this.vehicleTypeField = new JTextField(15);
         // add formatter to allow only numbers
         DecimalFormat df = new DecimalFormat();
+        df.setGroupingUsed(false);
         NumberFormatter numberFormatter = new NumberFormatter(df);
         numberFormatter.setMinimum(0);
         DefaultFormatterFactory factory = new DefaultFormatterFactory(numberFormatter);
@@ -58,8 +61,6 @@ public class AddDriverForm extends JPanel {
         this.addButton.setPreferredSize(buttonSize);
         this.driverViewButton = new JButton("View Driver Profiles");
         this.driverViewButton.setPreferredSize(buttonSize);
-        this.fareViewButton = new JButton("View Fare Record");
-        this.fareViewButton.setPreferredSize(buttonSize);
 
         setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
@@ -102,17 +103,15 @@ public class AddDriverForm extends JPanel {
         constraints.gridy = 1;
         add(baseFareDistanceField, constraints);
         Insets buttonInsets = new Insets(5, 0, 0, 0);
-        constraints.gridx = 2;
+        constraints.gridx = 3;
         constraints.gridy = 2;
         constraints.insets = buttonInsets;
         constraints.anchor = GridBagConstraints.CENTER;
         add(addButton, constraints);
         constraints.gridx = 3;
-        constraints.gridy = 2;
+        constraints.gridy = 3;
         add(driverViewButton, constraints);
-        constraints.gridx = 4;
-        constraints.gridy = 2;
-        add(fareViewButton, constraints);
+
     }
 
     // getter
@@ -146,10 +145,6 @@ public class AddDriverForm extends JPanel {
 
     public JButton getDriverViewButton() {
         return driverViewButton;
-    }
-
-    public JButton getFareViewButton() {
-        return fareViewButton;
     }
 
     // setter

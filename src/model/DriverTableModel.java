@@ -10,6 +10,7 @@ public class DriverTableModel extends AbstractTableModel {
     private List<Driver> driverList;
     private static String[] columns = {"Name", "Surname", "Email", "Vehicle Type", "Base Fare Price", "Base Fare Distance"};
     private static final Class[] columnClass = new Class[] {String.class, String.class, String.class, String.class, Integer.class, Integer.class};
+
     public DriverTableModel(List<Driver> driverList) {
         this.driverList = driverList;
     }

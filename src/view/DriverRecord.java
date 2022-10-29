@@ -4,6 +4,7 @@ import model.Driver;
 import model.DriverTableModel;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,8 @@ public class DriverRecord extends JPanel {
     private JButton viewFareRecordButton;
 
     public DriverRecord() {
+       TitledBorder border = BorderFactory.createTitledBorder("Driver Profiles");
+       this.setBorder(border);
        setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
 
        List<Driver> driverList = new ArrayList<Driver>();
@@ -51,6 +54,7 @@ public class DriverRecord extends JPanel {
        add(buttonPanel);
     }
 
+    // getter
     public JTable getDriverTable() {
         return driverTable;
     }
@@ -61,5 +65,13 @@ public class DriverRecord extends JPanel {
 
     public JButton getDeleteDriverButton() {
         return deleteDriverButton;
+    }
+
+    public JButton getCalFareButton() {
+        return calFareButton;
+    }
+
+    public JButton getViewFareRecordButton() {
+        return viewFareRecordButton;
     }
 }

@@ -2,7 +2,7 @@ import view.MainFrame;
 
 import javax.swing.*;
 
-public class Main {
+public class FareCalApp {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
