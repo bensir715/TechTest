@@ -7,7 +7,7 @@ Technical Test Solution: A Java swing application for Fare Calculation.
 **The Application start with a driver profile registration form.**
 ![image](https://user-images.githubusercontent.com/32252705/198826551-a227c279-48a1-4bd7-8893-7b91558fe8fa.png)
 
-**Buttons:** _Register, View Driver Profiles_
+**Buttons: _Register, View Driver Profiles**_
 
 _**Register:** register new dirver profile with the above input and show the table of Registered Driver Profiles, there is a simple validation on email input (format should be x@x.x , x for any length)_
 
@@ -19,8 +19,10 @@ _**View Driver Profiles:** change to Driver Profiles panel for edit, delete driv
 **From _View Driver Profiles_, a table of Driver Profiles will be shown with Buttons on the right side.**
 
 **Table action:** _by double clicking on the table cell, the selected cell will become editable. The record will be updated with modified value on **Enter Key**._
+![image](https://user-images.githubusercontent.com/32252705/198826629-e08b668e-016b-4a1a-a649-a58347cec82a.png)
 
-**Buttons:** _Add Driver, Delete Driver, Calculate Fare, Fare History_
+
+**Buttons: _Add Driver, Delete Driver, Calculate Fare, Fare History**_
 
 _**Add Driver:** back to the Driver Profile registration form_
 
@@ -35,7 +37,7 @@ _**Fare History:** show the table of Fare Calculation History_
 
 **Form Fare History, a table of previous Fare Calculation will be shown with a button on the right.**
 
-**Button:** _View Driver Profiles_
+**Button: _View Driver Profiles**_
 
 _**View Driver Profiles:** back to the table of Driver Profiles panel_
 
