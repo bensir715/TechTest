@@ -36,7 +36,7 @@ _**Fare History:** show the table of Fare Calculation History_
 ## View Saved Fare
 
 **Form Fare History, a table of previous Fare Calculation will be shown with a button on the right.**
-![image](https://user-images.githubusercontent.com/32252705/198826481-6921587a-d612-45a8-aab9-c09afab22670.png)
+![image](https://user-images.githubusercontent.com/32252705/198826758-774057d0-a0f0-4bbf-92a2-11f0e398dfba.png)
 
 **Button: _View Driver Profiles**_
 
