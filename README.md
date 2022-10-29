@@ -14,11 +14,12 @@ _**Register:** register new dirver profile with the above input and show the tab
 _**View Driver Profiles:** change to Driver Profiles panel for edit, delete driver profiles and fare calculation_
 
 ## Edit / Delete Driver Profile, Fare Calculation
-![image](https://user-images.githubusercontent.com/32252705/198826463-285df733-4ab4-475e-8d6c-9fa5833411bb.png)
 
 **From _View Driver Profiles_, a table of Driver Profiles will be shown with Buttons on the right side.**
+![image](https://user-images.githubusercontent.com/32252705/198826463-285df733-4ab4-475e-8d6c-9fa5833411bb.png)
 
 **Table action:** _by double clicking on the table cell, the selected cell will become editable. The record will be updated with modified value on **Enter Key**._
+
 ![image](https://user-images.githubusercontent.com/32252705/198826629-e08b668e-016b-4a1a-a649-a58347cec82a.png)
 
 
@@ -33,9 +34,9 @@ _**Calculate Fare:** retrieve Fare information from info.csv, calculate the chea
 _**Fare History:** show the table of Fare Calculation History_
 
 ## View Saved Fare
-![image](https://user-images.githubusercontent.com/32252705/198826481-6921587a-d612-45a8-aab9-c09afab22670.png)
 
 **Form Fare History, a table of previous Fare Calculation will be shown with a button on the right.**
+![image](https://user-images.githubusercontent.com/32252705/198826481-6921587a-d612-45a8-aab9-c09afab22670.png)
 
 **Button: _View Driver Profiles**_
 
