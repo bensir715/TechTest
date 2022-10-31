@@ -21,6 +21,7 @@ public class Driver {
         this.baseFareDistance = baseFareDistance;
     }
 
+    // getter and setter
     public String getName() {
         return name;
     }

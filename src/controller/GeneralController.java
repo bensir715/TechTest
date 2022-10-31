@@ -29,7 +29,9 @@ public class GeneralController {
         this.driverRecord = driverRecord;
         this.fareInfoRecord = fareInfoRecord;
 
-        // set action event for AddDriverForm buttons
+        //================================================================================
+        // Set action event for AddDriverForm buttons
+        //================================================================================
         addDriverForm.getAddButton().addActionListener(actionEvent -> {
 
             Driver driver = mapAddFormToObj(addDriverForm);
@@ -46,7 +48,7 @@ public class GeneralController {
             // Renew driverRecord component to mainFrame
             driverRecord.getDriverTable().revalidate();
             // show new driverRecord component
-            mainFrame.getCardLayout().show(mainFrame.getContentPane(), "driver record");
+            mainFrame.getCardLayout().show(mainFrame.getContentPane(), "DriverRecord");
 
             resetAddFormField(addDriverForm);/**/
         });
@@ -57,12 +59,14 @@ public class GeneralController {
             // Renew driverRecord component to mainFrame
             driverRecord.getDriverTable().revalidate();
 
-            mainFrame.getCardLayout().show(mainFrame.getContentPane(), "driver record");
+            mainFrame.getCardLayout().show(mainFrame.getContentPane(), "DriverRecord");
         });
 
-        // set action event for DriverRecord buttons
+        //================================================================================
+        // Set action event for DriverRecord buttons
+        //================================================================================
         driverRecord.getViewAddDriverButton().addActionListener(actionEvent -> {
-            mainFrame.getCardLayout().show(mainFrame.getContentPane(), "add form");
+            mainFrame.getCardLayout().show(mainFrame.getContentPane(), "AddDriverForm");
         });
 
         driverRecord.getDeleteDriverButton().addActionListener(actionEvent -> {
@@ -111,16 +115,18 @@ public class GeneralController {
             // Renew fareInfoRecord component to mainFrame
             fareInfoRecord.getFareInfoTable().revalidate();
             // show new fareInfoRecord component
-            mainFrame.getCardLayout().show(mainFrame.getContentPane(), "fareInfo record");
+            mainFrame.getCardLayout().show(mainFrame.getContentPane(), "FareInfoRecord");
         });
 
         driverRecord.getViewFareRecordButton().addActionListener(actionEvent -> {
-            mainFrame.getCardLayout().show(mainFrame.getContentPane(), "fareInfo record");
+            mainFrame.getCardLayout().show(mainFrame.getContentPane(), "FareInfoRecord");
         });
 
-        // set action event for FareInfoRecord buttons
+        //================================================================================
+        // Set action event for FareInfoRecord buttons
+        //================================================================================
         fareInfoRecord.getDriverViewButton().addActionListener(actionEvent -> {
-            mainFrame.getCardLayout().show(mainFrame.getContentPane(), "driver record");
+            mainFrame.getCardLayout().show(mainFrame.getContentPane(), "DriverRecord");
         });
     }
 

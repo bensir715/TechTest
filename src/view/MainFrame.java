@@ -21,15 +21,16 @@ public class MainFrame extends JFrame {
 
         GeneralController controller = new GeneralController(this, addDriverForm, driverRecord, fareInfoRecord);
 
-        add(addDriverForm, "add form");
-        add(driverRecord, "driver record");
-        add(fareInfoRecord, "fareInfo record");
+        add(addDriverForm, "AddDriverForm");
+        add(driverRecord, "DriverRecord");
+        add(fareInfoRecord, "FareInfoRecord");
 
         setSize(MAIN_WIDTH, MAIN_HEIGHT);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
 
+    // getter
     public CardLayout getCardLayout() {
         return cardLayout;
     }

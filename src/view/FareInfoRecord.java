@@ -38,6 +38,7 @@ public class FareInfoRecord extends JPanel {
         add(buttonPanel);
     }
 
+    // getter
     public FareInfoTableModel getFareInfoTableModel() {
         return fareInfoTableModel;
     }

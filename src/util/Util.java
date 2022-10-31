@@ -35,6 +35,7 @@ public final class Util {
         try{
             BufferedReader reader = new BufferedReader(new FileReader(path));
             String[] infoStrArr = reader.readLine().split(",");
+            // return null if empty or non-Numeric value
             if(!isNumeric(infoStrArr[0]) || !isNumeric(infoStrArr[1]) || !isNumeric(infoStrArr[2])){
                 return null;
             } else{
